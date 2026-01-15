@@ -3,478 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siurtec Formación | Transformación Digital a Coste Cero</title>
-    <meta name="description" content="Formación en digitalización para Ayuntamientos financiada al 100% por Diputación. Somos Agente Digitalizador Oficial.">
+    <title>Siurtec Formación - Digitalización para Mayores</title>
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Configuración Simplificada -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        siur: {
-                            navy: '#0f172a',
-                            yellow: '#eab308',
-                            black: '#171717',
-                            gray: '#f8fafc',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Fuentes Google (Inter y Merriweather) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        html { scroll-behavior: smooth; }
-        
-        /* Patrón de puntos estático y ligero */
-        .bg-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 24px 24px;
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        
-        details > summary { list-style: none; }
-        details > summary::-webkit-details-marker { display: none; }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="font-sans text-siur-black antialiased bg-white">
+<body class="bg-slate-50 text-slate-800 smooth-scroll">
 
-    <!-- NAVBAR -->
-    <nav class="fixed w-full z-50 bg-white/95 border-b border-gray-200">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-4">
-                    <img src="logo.jpg" alt="Logotipo Siurtec" class="h-10 md:h-12 w-auto object-contain">
-                    <div class="hidden sm:block border-l-2 border-gray-200 pl-4">
-                        <span class="block text-xs text-siur-yellow uppercase tracking-wider font-bold">Agente Digitalizador</span>
-                        <span class="block text-[10px] text-gray-400 font-medium tracking-wide">Soluciones B2G</span>
-                    </div>
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">S</div>
+                    <span class="font-bold text-2xl text-blue-900">Siurtec<span class="text-blue-500">Formación</span></span>
                 </div>
-                
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#programa" class="text-gray-600 hover:text-siur-navy font-medium text-sm">Programa</a>
-                    <a href="#financiacion" class="text-gray-600 hover:text-siur-navy font-medium text-sm">Financiación</a>
-                    <a href="#testimonios" class="text-gray-600 hover:text-siur-navy font-medium text-sm">Referencias</a>
-                    <a href="#contacto" class="bg-siur-yellow hover:bg-yellow-400 text-siur-navy px-5 py-2.5 rounded-full font-bold transition shadow-md text-sm">
-                        Solicitar Dossier
-                    </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-slate-600 hover:text-blue-900 font-medium transition">Inicio</a>
+                    <a href="#modelo" class="text-slate-600 hover:text-blue-900 font-medium transition">Financiación</a>
+                    <a href="#cursos" class="text-slate-600 hover:text-blue-900 font-medium transition">Cursos</a>
+                    <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition shadow-lg">Contactar Ayuntamiento</a>
                 </div>
-
+                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <button class="text-siur-navy hover:text-siur-yellow focus:outline-none">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-slate-600 hover:text-blue-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#inicio" class="block py-3 px-4 text-slate-700 hover:bg-slate-100">Inicio</a>
+            <a href="#modelo" class="block py-3 px-4 text-slate-700 hover:bg-slate-100">Financiación</a>
+            <a href="#cursos" class="block py-3 px-4 text-slate-700 hover:bg-slate-100">Cursos</a>
+            <a href="#contacto" class="block py-3 px-4 text-blue-600 font-bold hover:bg-slate-100">Contactar</a>
+        </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-pattern">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 text-siur-navy text-sm font-medium shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                    Convocatoria 2026 Abierta
-                </span>
-                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gray-200 text-siur-navy text-sm font-medium shadow-sm">
-                    <i data-lucide="award" class="w-4 h-4 text-siur-yellow"></i> Agente Digitalizador
-                </span>
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl font-heading font-extrabold text-siur-navy mb-6 tracking-tight">
-                Moderniza tu Municipio <br class="hidden md:block" />
-                <span class="text-blue-600">sin coste presupuestario.</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                Programa integral de alfabetización digital financiado al <strong class="text-siur-navy bg-yellow-100 px-1 rounded">100% por la Diputación</strong>. 
-                Eliminamos la brecha digital en tu administración local.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#contacto" class="flex items-center justify-center gap-2 bg-siur-navy text-white px-8 py-3 rounded-lg text-lg font-bold hover:bg-slate-800 transition shadow-lg">
-                    Gestionar Subvención
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a href="#programa" class="flex items-center justify-center gap-2 bg-white text-gray-700 border border-gray-300 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-50 transition shadow-sm">
-                    Ver Temario
-                </a>
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-28 pb-16 lg:pt-40 lg:pb-24 hero-gradient text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-blue-800 bg-opacity-50 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold mb-6 border border-blue-400">
+                        <i class="fas fa-certificate text-yellow-400 mr-2"></i> Agente Digitalizador Certificado
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Acercando la tecnología a nuestros mayores
+                    </h1>
+                    <p class="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
+                        Capacitamos a personas de +65 años en competencias digitales esenciales. Una iniciativa financiada por Fondos Europeos para municipios comprometidos con la inclusión.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contacto" class="bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition text-center">
+                            Solicitar para mi municipio
+                        </a>
+                        <a href="#cursos" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-900 transition text-center">
+                            Ver programa formativo
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden lg:block relative">
+                    <!-- Placeholder image specifically for seniors and tech -->
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mayores aprendiendo tecnología" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl text-blue-900 max-w-xs">
+                        <p class="font-bold text-lg">"Nunca es tarde para aprender"</p>
+                        <div class="flex text-yellow-500 mt-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+        <!-- Background decorative shapes -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-400 opacity-10 rounded-full blur-3xl"></div>
+    </section>
 
-    <!-- SOCIAL PROOF -->
-    <div class="bg-white border-y border-gray-100 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
-                Instituciones Colaboradoras
-            </p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
-                <div class="flex items-center gap-2 font-bold text-lg text-gray-600">
-                    <i data-lucide="award" class="w-6 h-6"></i> Agente Digital
-                </div>
-                <div class="flex items-center gap-2 font-bold text-lg text-gray-600">
-                    <i data-lucide="landmark" class="w-6 h-6"></i> Red Municipios
-                </div>
-                <div class="flex items-center gap-2 font-bold text-lg text-gray-600">
-                    <i data-lucide="building-2" class="w-6 h-6"></i> Diputación
-                </div>
+    <!-- Logos Section -->
+    <div class="bg-white py-8 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-slate-500 text-sm font-semibold mb-6 uppercase tracking-wider">Iniciativa impulsada por</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                <!-- Logos simulados con texto/iconos para no depender de imágenes externas rotas -->
+                <div class="flex items-center gap-2 font-bold text-xl text-slate-700"><i class="fas fa-flag-europe text-blue-700 text-3xl"></i> NextGenerationEU</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-slate-700"><i class="fas fa-landmark text-red-700 text-3xl"></i> Plan de Recuperación</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-slate-700"><i class="fas fa-digital-tachograph text-orange-600 text-3xl"></i> Kit Digital</div>
             </div>
         </div>
     </div>
 
-    <!-- MÓDULOS DE FORMACIÓN -->
-    <section id="programa" class="py-20 bg-siur-gray">
+    <!-- Modelo de Financiación (Value Prop for City Hall) -->
+    <section id="modelo" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-siur-yellow font-bold uppercase tracking-widest text-xs mb-2 block">Catálogo 2026</span>
-                <h2 class="text-3xl md:text-4xl font-heading font-bold text-siur-navy mb-4">Itinerarios Formativos Subvencionados</h2>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Tres niveles de especialización diseñados para cubrir las necesidades reales de cada departamento municipal.
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Gestión Simplificada</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4 text-slate-900">Coste Cero para Ayuntamientos y Ciudadanos</h2>
+                <p class="text-lg text-slate-600">
+                    Facilitamos la gestión administrativa. Siurtec Formación, como Agente Digitalizador certificado, se encarga de la tramitación con los fondos europeos.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Curso 1: Digitalización Básica -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:border-siur-yellow hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-0 right-0 bg-blue-50 px-3 py-1 rounded-bl-lg text-xs font-bold text-siur-navy uppercase tracking-wide">
-                        Nivel Básico
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-blue-500 relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-university"></i>
                     </div>
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-siur-navy mb-6 group-hover:bg-siur-navy group-hover:text-siur-yellow transition-colors">
-                        <i data-lucide="mouse-pointer-2" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-siur-navy mb-2 font-heading">Pasaporte Digital</h3>
-                    <p class="text-gray-500 text-sm mb-6 flex-grow">
-                        Formación esencial para eliminar la brecha digital. Ideal para personal de oficios y administrativo.
-                    </p>
-                    <div class="space-y-3 mb-8">
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Certificado Digital y Firma
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Ofimática en la Nube
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Trámites Sede Electrónica
-                        </div>
-                    </div>
-                    <a href="#contacto" class="w-full block text-center bg-gray-50 hover:bg-siur-yellow hover:text-siur-navy text-gray-600 font-bold py-3 rounded-lg transition-colors border border-gray-200 hover:border-transparent">
-                        Solicitar Temario
-                    </a>
+                    <h3 class="mt-6 text-xl font-bold text-center mb-4">Para el Ayuntamiento</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> <strong>0€ de coste directo.</strong></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Sin burocracia compleja.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Servicio de valor para el ciudadano.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Mejora los índices de digitalización local.</li>
+                    </ul>
                 </div>
 
-                <!-- Curso 2: Ciberseguridad (ENS) -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:border-siur-yellow hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-0 right-0 bg-yellow-50 px-3 py-1 rounded-bl-lg text-xs font-bold text-yellow-700 uppercase tracking-wide">
-                        Obligatorio
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-green-500 relative mt-8 md:mt-0">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-siur-navy mb-6 group-hover:bg-siur-navy group-hover:text-siur-yellow transition-colors">
-                        <i data-lucide="shield-check" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-siur-navy mb-2 font-heading">Ciberseguridad y ENS</h3>
-                    <p class="text-gray-500 text-sm mb-6 flex-grow">
-                        Cumplimiento del Esquema Nacional de Seguridad. Crítico para secretarios e interventores.
-                    </p>
-                    <div class="space-y-3 mb-8">
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Normativa ENS y RGPD
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Prevención de Ransomware
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Protocolos de Seguridad
-                        </div>
-                    </div>
-                    <a href="#contacto" class="w-full block text-center bg-gray-50 hover:bg-siur-yellow hover:text-siur-navy text-gray-600 font-bold py-3 rounded-lg transition-colors border border-gray-200 hover:border-transparent">
-                        Solicitar Temario
-                    </a>
+                    <h3 class="mt-6 text-xl font-bold text-center mb-4">Para el Ciudadano (+65)</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> <strong>Formación 100% Gratuita.</strong></li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Material didáctico incluido.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Clases presenciales y prácticas.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Ambiente social y seguro.</li>
+                    </ul>
                 </div>
 
-                <!-- Curso 3: IA y Productividad -->
-                <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 hover:border-siur-yellow hover:shadow-xl transition-all duration-300 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-0 right-0 bg-purple-50 px-3 py-1 rounded-bl-lg text-xs font-bold text-purple-700 uppercase tracking-wide">
-                        Innovación
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-t-4 border-yellow-500 relative mt-8 md:mt-0">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-white text-xl">
+                        <i class="fas fa-euro-sign"></i>
                     </div>
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-siur-navy mb-6 group-hover:bg-siur-navy group-hover:text-siur-yellow transition-colors">
-                        <i data-lucide="sparkles" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-siur-navy mb-2 font-heading">IA para la Administración</h3>
-                    <p class="text-gray-500 text-sm mb-6 flex-grow">
-                        Productividad avanzada. Aprende a usar IA para agilizar expedientes y atención ciudadana.
-                    </p>
-                    <div class="space-y-3 mb-8">
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Redacción de Pliegos con IA
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Automatización de Correos
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-gray-600">
-                            <i data-lucide="check" class="w-4 h-4 text-green-500"></i> Chatbots Vecinales
-                        </div>
-                    </div>
-                    <a href="#contacto" class="w-full block text-center bg-gray-50 hover:bg-siur-yellow hover:text-siur-navy text-gray-600 font-bold py-3 rounded-lg transition-colors border border-gray-200 hover:border-transparent">
-                        Solicitar Temario
-                    </a>
+                    <h3 class="mt-6 text-xl font-bold text-center mb-4">La Financiación</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Pago vía <strong>Diputación</strong>.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Fondos Next Generation EU.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Gestión integral por Siurtec.</li>
+                        <li class="flex items-start"><i class="fas fa-check text-green-500 mt-1 mr-2"></i> Transparencia total.</li>
+                    </ul>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE COSTES -->
-    <section id="financiacion" class="py-20 bg-siur-navy text-white">
+    <!-- Cursos Section -->
+    <section id="cursos" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                
-                <div class="lg:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Financiación <span class="text-siur-yellow">Garantizada</span></h2>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        Existe una partida presupuestaria específica en la Diputación para modernización. Nosotros nos encargamos de desbloquearla para tu ayuntamiento.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="bg-white/10 p-2 rounded-lg text-siur-yellow"><i data-lucide="file-signature" class="w-5 h-5"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg">Solicitud y Trámite</h4>
-                                <p class="text-gray-400 text-sm">Preparamos toda la documentación técnica.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-white/10 p-2 rounded-lg text-siur-yellow"><i data-lucide="check-circle" class="w-5 h-5"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg">Aprobación Express</h4>
-                                <p class="text-gray-400 text-sm">Resolución favorable en menos de 15 días.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="bg-white/10 p-2 rounded-lg text-siur-yellow"><i data-lucide="play-circle" class="w-5 h-5"></i></div>
-                            <div>
-                                <h4 class="font-bold text-lg">Ejecución Inmediata</h4>
-                                <p class="text-gray-400 text-sm">Inicio de formación sin adelanto de fondos.</p>
-                            </div>
-                        </div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Programa Formativo Especializado</h2>
+                <p class="mt-4 text-lg text-slate-600">Diseñado pedagógicamente para reducir la brecha digital en la tercera edad.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Curso 1 -->
+                <div class="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-laptop-code text-6xl text-blue-500 transform group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Habilidades Básicas Informáticas</h3>
+                        <p class="text-slate-600 mb-6">El primer paso hacia la independencia digital. Aprenderán a manejar el ordenador y el smartphone sin miedo.</p>
+                        <h4 class="font-bold text-sm text-slate-900 uppercase mb-3">Contenidos clave:</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• Encendido, ratón y teclado.</li>
+                            <li>• Navegación por Internet y búsqueda.</li>
+                            <li>• Uso de Correo Electrónico.</li>
+                            <li>• Videollamadas con familiares.</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="lg:w-1/2 w-full">
-                    <div class="bg-white rounded-xl p-8 shadow-xl text-siur-black">
-                        <h3 class="text-center font-heading font-bold text-xl mb-8 border-b border-gray-100 pb-4">Esquema de Inversión</h3>
+                <!-- Curso 2 -->
+                <div class="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition duration-300">
+                    <div class="h-48 bg-red-100 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-shield-halved text-6xl text-red-500 transform group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Ciberseguridad Práctica</h3>
+                        <p class="text-slate-600 mb-6">Protegemos a nuestros mayores de estafas online. Seguridad en el día a día digital.</p>
+                        <h4 class="font-bold text-sm text-slate-900 uppercase mb-3">Contenidos clave:</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• Detección de estafas (Phishing/SMS).</li>
+                            <li>• Contraseñas seguras y gestión.</li>
+                            <li>• Compras seguras por internet.</li>
+                            <li>• Privacidad en Redes Sociales.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition duration-300">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center relative overflow-hidden">
+                        <i class="fas fa-robot text-6xl text-purple-500 transform group-hover:scale-110 transition duration-500"></i>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">Introducción a la Inteligencia Artificial</h3>
+                        <p class="text-slate-600 mb-6">Acercamos el futuro de forma sencilla. Cómo la IA puede facilitarles la vida diaria.</p>
+                        <h4 class="font-bold text-sm text-slate-900 uppercase mb-3">Contenidos clave:</h4>
+                        <ul class="text-sm text-slate-600 space-y-2">
+                            <li>• ¿Qué es la IA y para qué sirve?</li>
+                            <li>• Uso de asistentes de voz avanzados.</li>
+                            <li>• Traducción automática en viajes.</li>
+                            <li>• Herramientas de salud y recordatorios.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Credibility Section -->
+    <section class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Sobre Siurtec Formación</h2>
+                    <p class="text-slate-300 mb-6 text-lg leading-relaxed">
+                        Somos una empresa líder en formación tecnológica con una clara vocación social. Entendemos que la digitalización no debe dejar a nadie atrás.
+                    </p>
+                    <p class="text-slate-300 mb-8 text-lg leading-relaxed">
+                        Como <strong>Agente Digitalizador Certificado</strong>, cumplimos con todos los estándares de calidad exigidos por la Unión Europea y el Gobierno de España para la ejecución de fondos Next Generation.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <span class="block text-4xl font-bold text-blue-500 mb-1">+50</span>
+                            <span class="text-sm text-slate-400">Municipios Colaboradores</span>
+                        </div>
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <span class="block text-4xl font-bold text-blue-500 mb-1">+1000</span>
+                            <span class="text-sm text-slate-400">Alumnos Formados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg text-slate-900 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2">¿Por qué elegirnos?</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+                            <span>Profesores especializados en gerontología y TIC.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+                            <span>Equipos adaptados y portátiles.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+                            <span>Gestión integral de la subvención.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-600 text-xl mr-3"></i>
+                            <span>Certificación oficial al finalizar.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contacto" class="py-20 bg-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-slate-900">Lleva estos cursos a tu municipio</h2>
+                        <p class="mt-4 text-slate-600">Si eres representante de un Ayuntamiento, contáctanos para iniciar los trámites con la Diputación. Sin coste.</p>
+                    </div>
+
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nombre" class="block text-sm font-medium text-slate-700 mb-1">Nombre del Representante</label>
+                                <input type="text" id="nombre" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Nombre completo">
+                            </div>
+                            <div>
+                                <label for="municipio" class="block text-sm font-medium text-slate-700 mb-1">Municipio / Ayuntamiento</label>
+                                <input type="text" id="municipio" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="Nombre del municipio">
+                            </div>
+                        </div>
                         
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-200">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-gray-200 p-2 rounded text-gray-600"><i data-lucide="building" class="w-5 h-5"></i></div>
-                                    <span class="font-bold">Ayuntamiento</span>
-                                </div>
-                                <span class="text-2xl font-bold text-green-600">0 €</span>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Correo Electrónico Oficial</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="ej: alcalde@municipio.es">
                             </div>
-                            
-                            <div class="text-center text-sm font-bold text-siur-navy bg-gray-100 py-1 rounded">
-                                FINANCIACIÓN EXTERNA
-                            </div>
-                            
-                            <div class="flex justify-between items-center p-4 bg-blue-50 rounded-lg border border-blue-100">
-                                <div class="flex items-center gap-3">
-                                    <div class="bg-siur-navy p-2 rounded text-white"><i data-lucide="landmark" class="w-5 h-5"></i></div>
-                                    <span class="font-bold text-siur-navy">Diputación</span>
-                                </div>
-                                <span class="text-2xl font-bold text-siur-yellow">100 %</span>
+                            <div>
+                                <label for="telefono" class="block text-sm font-medium text-slate-700 mb-1">Teléfono de Contacto</label>
+                                <input type="tel" id="telefono" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="600 000 000">
                             </div>
                         </div>
-                        <p class="text-center text-xs text-gray-400 mt-6">*Solo requiere firma de decreto de alcaldía</p>
-                    </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-slate-700 mb-1">Comentarios / Dudas</label>
+                            <textarea id="mensaje" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition" placeholder="¿En qué fechas estarían interesados?"></textarea>
+                        </div>
+
+                        <div class="text-center pt-4">
+                            <button type="button" onclick="alert('Gracias por su interés. Un agente de Siurtec se pondrá en contacto con el Ayuntamiento en breve.')" class="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-lg w-full md:w-auto">
+                                Solicitar Información Sin Compromiso
+                            </button>
+                        </div>
+                        <p class="text-xs text-center text-slate-500 mt-4">Sus datos serán tratados por Siurtec Formación únicamente para la gestión de esta solicitud.</p>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section id="testimonios" class="py-20 bg-white">
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-heading font-bold text-siur-navy text-center mb-12">Referencias Municipales</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
-                    <p class="text-gray-600 italic mb-4 text-sm">"La implementación del Chatbot ha reducido las colas un 40%. Los vecinos están encantados con la atención 24h."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-siur-navy flex items-center justify-center text-white font-bold text-xs">AM</div>
-                        <div>
-                            <h4 class="font-bold text-siur-navy text-sm">Antonio Martínez</h4>
-                            <p class="text-xs text-gray-400">Alcalde de Villaverde</p>
-                        </div>
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm">S</div>
+                        <span class="font-bold text-xl text-white">Siurtec<span class="text-blue-500">Formación</span></span>
                     </div>
+                    <p class="mb-4 max-w-sm">
+                        Agente Digitalizador oficial. Llevamos la tecnología a todos los rincones, garantizando que nuestros mayores disfruten de los beneficios de la era digital.
+                    </p>
                 </div>
-                
-                <div class="p-6 rounded-xl bg-white border border-gray-200 shadow-sm">
-                    <p class="text-gray-600 italic mb-4 text-sm">"Siurtec se encargó de toda la justificación ante la Diputación. Como Interventora, es un alivio no tener carga extra."</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-siur-yellow flex items-center justify-center text-siur-navy font-bold text-xs">LR</div>
-                        <div>
-                            <h4 class="font-bold text-siur-navy text-sm">Laura Ruiz</h4>
-                            <p class="text-xs text-gray-400">Secretaria-Interventora</p>
-                        </div>
-                    </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-blue-400 transition">Inicio</a></li>
+                        <li><a href="#cursos" class="hover:text-blue-400 transition">Cursos Disponibles</a></li>
+                        <li><a href="#modelo" class="hover:text-blue-400 transition">Fondos Europeos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contacto</h4>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-envelope mr-2"></i> info@siurtec.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> 900 123 456</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> España</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-16 bg-siur-gray">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-heading font-bold text-siur-navy mb-8 text-center">Preguntas Frecuentes</h2>
-            
-            <div class="space-y-3">
-                <details class="group bg-white rounded-lg shadow-sm border border-gray-200">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-siur-navy">
-                        <span>¿Es realmente coste cero?</span>
-                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down" class="w-4 h-4 text-siur-yellow"></i></span>
-                    </summary>
-                    <div class="text-gray-600 px-4 pb-4 text-sm border-t border-gray-100 pt-3">
-                        Sí. La subvención es directa. El Ayuntamiento no tiene que realizar retención de crédito ni adelantar el pago.
-                    </div>
-                </details>
-                <details class="group bg-white rounded-lg shadow-sm border border-gray-200">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-siur-navy">
-                        <span>¿Se requiere aprobación por Pleno?</span>
-                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down" class="w-4 h-4 text-siur-yellow"></i></span>
-                    </summary>
-                    <div class="text-gray-600 px-4 pb-4 text-sm border-t border-gray-100 pt-3">
-                        No suele ser necesario. Al ser un contrato menor financiado, basta con un Decreto de Alcaldía.
-                    </div>
-                </details>
-                <details class="group bg-white rounded-lg shadow-sm border border-gray-200">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-siur-navy">
-                        <span>¿Cuánto tarda en implementarse?</span>
-                        <span class="transition-transform group-open:rotate-180"><i data-lucide="chevron-down" class="w-4 h-4 text-siur-yellow"></i></span>
-                    </summary>
-                    <div class="text-gray-600 px-4 pb-4 text-sm border-t border-gray-100 pt-3">
-                        Desde la firma de la solicitud hasta el inicio de la formación pasan aproximadamente 15-20 días hábiles.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO -->
-    <section id="contacto" class="py-20 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
-                <div class="bg-siur-navy p-8 text-center">
-                    <h2 class="text-2xl font-bold text-white mb-2">Solicitar Propuesta</h2>
-                    <p class="text-gray-300 text-sm">Contactaremos con Intervención o Alcaldía en menos de 24 horas.</p>
-                </div>
-                
-                <form id="contactForm" class="p-8 space-y-6" onsubmit="event.preventDefault(); showSuccess();">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Nombre</label>
-                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-siur-yellow focus:outline-none bg-gray-50">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Cargo</label>
-                            <select required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-siur-yellow focus:outline-none bg-gray-50">
-                                <option value="" disabled selected>Seleccionar...</option>
-                                <option value="alcalde">Alcalde/sa</option>
-                                <option value="concejal">Concejal/a</option>
-                                <option value="tecnico">Técnico</option>
-                                <option value="secretario">Secretario/a</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Municipio</label>
-                            <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-siur-yellow focus:outline-none bg-gray-50">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Teléfono</label>
-                            <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-siur-yellow focus:outline-none bg-gray-50">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 uppercase mb-2">Email Oficial</label>
-                        <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-siur-yellow focus:outline-none bg-gray-50">
-                    </div>
-
-                    <div class="flex items-start">
-                        <input id="privacy" type="checkbox" required class="mt-1 h-4 w-4 text-siur-yellow border-gray-300 rounded">
-                        <label for="privacy" class="ml-3 block text-xs text-gray-500">
-                            He leído y acepto la política de privacidad.
-                        </label>
-                    </div>
-
-                    <button type="submit" class="w-full bg-siur-yellow text-siur-navy font-bold text-lg py-3 rounded hover:bg-yellow-400 transition shadow">
-                        Enviar Solicitud
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-siur-navy text-white py-10 border-t border-gray-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3">
-                    <img src="logo.jpg" alt="Logo" class="h-8 w-auto bg-white p-1 rounded">
-                    <span class="opacity-60">&copy; 2026 Siurtec Formación S.L.</span>
-                </div>
-                <div class="flex gap-6 opacity-60">
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2024 Siurtec Formación. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
                     <a href="#" class="hover:text-white">Aviso Legal</a>
-                    <a href="#" class="hover:text-white">Privacidad</a>
-                    <a href="#" class="hover:text-white">Cookies</a>
+                    <a href="#" class="hover:text-white">Política de Privacidad</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Script de Funcionalidad -->
-    <script>
-        lucide.createIcons();
-
-        function showSuccess() {
-            const btn = document.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-            
-            btn.innerHTML = `<span class="flex items-center justify-center gap-2"><i data-lucide="check" class="w-5 h-5"></i> ¡Enviado!</span>`;
-            btn.classList.remove('bg-siur-yellow', 'text-siur-navy');
-            btn.classList.add('bg-green-600', 'text-white');
-            
-            lucide.createIcons();
-            
-            setTimeout(() => {
-                alert("Solicitud recibida. Contactaremos en breve.");
-                btn.innerText = originalText;
-                btn.classList.add('bg-siur-yellow', 'text-siur-navy');
-                btn.classList.remove('bg-green-600', 'text-white');
-                document.getElementById('contactForm').reset();
-            }, 2000);
-        }
-    </script>
 </body>
 </html>
